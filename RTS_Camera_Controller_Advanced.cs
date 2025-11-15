@@ -6,12 +6,12 @@ public class RTSCameraController_Advanced : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 20f;          // Base movement speed
     public float fastMoveMultiplier = 2f;  // Speed multiplier when holding Shift
-    public float edgeScrollSize = 20f;     // Edge thickness for edge scrolling
+    public float edgeScrollSize = 20f;     // Edge thicknes for edge scrolling
 
     [Header("Smoothing")]
     public float movementSmoothTime = 0.12f; // Time for smooth damping movement
     public float rotationSmoothTime = 0.1f;  // Time for smooth damping rotations
-    public float zoomSmoothTime = 0.1f;      // Time for smooth damping zoom
+    public float zoomSmoothTime = 0.1f;      // Time for smoth damping zoom
 
     [Header("Zoom")]
     public float zoomSpeed = 200f;          // Scroll wheel zoom speed
@@ -22,7 +22,7 @@ public class RTSCameraController_Advanced : MonoBehaviour
     public float rotateSpeed = 120f;        // Rotation drag speed
 
     [Header("Drag Panning")]
-    public float dragPanSpeed = 1.2f;       // Speed of middle-mouse drag panning
+    public float dragPanSpeed = 1.2f;       // Speed of middle-mous drag panning
 
     [Header("Bounds (Optional)")]
     public bool useBounds = false;          // Toggle bounding
@@ -32,7 +32,7 @@ public class RTSCameraController_Advanced : MonoBehaviour
     private Camera cam;                     // Cache reference to camera
     private Vector3 velocity = Vector3.zero;       // SmoothDamp velocity for movement
     private float fovVelocity = 0f;                 // SmoothDamp velocity for zoom
-    private float rotationVelocity = 0f;            // SmoothDamp velocity for rotation
+    private float rotationVelocity = 0f;            // SmoothDamp velocity  rotation
     private float targetRotationY;                  // Smoothed Y rotation target
 
     private void Start()
@@ -52,7 +52,7 @@ public class RTSCameraController_Advanced : MonoBehaviour
     {
         Vector3 targetMove = Vector3.zero;  // Desired movement before smoothing
 
-        bool fast = Input.GetKey(KeyCode.LeftShift); // Check for fast speed modifier
+        bool fast = Input.GetKey(KeyCode.LeftShift); // Check for fast speed modifer
         float speed = fast ? moveSpeed * fastMoveMultiplier : moveSpeed;
 
         // WASD MOVEMENT
@@ -113,7 +113,7 @@ public class RTSCameraController_Advanced : MonoBehaviour
 
         // SMOOTH ROTATION USING DAMPING
         float newY = Mathf.SmoothDampAngle(
-            transform.eulerAngles.y,      // Current angle
+            transform.eulerAngles.y,      // Current angl
             targetRotationY,              // Target angle
             ref rotationVelocity,         // Velocity ref
             rotationSmoothTime            // Smooth time
@@ -129,7 +129,7 @@ public class RTSCameraController_Advanced : MonoBehaviour
         if (scroll != 0)
         {
             float targetFov = cam.fieldOfView - scroll * zoomSpeed * Time.deltaTime; // Calculate desired FOV
-            targetFov = Mathf.Clamp(targetFov, minZoom, maxZoom);                    // Clamp to limits
+            targetFov = Mathf.Clamp(targetFov, minZoom, maxZoom);                    // Clamp to limts
 
             cam.fieldOfView = Mathf.SmoothDamp(
                 cam.fieldOfView,               // Current FOV
