@@ -1,4 +1,4 @@
-using UnityEngine;  // Needed for Unity components
+using UnityEngine;  
 
 public class RTSSelectable : MonoBehaviour
 {
