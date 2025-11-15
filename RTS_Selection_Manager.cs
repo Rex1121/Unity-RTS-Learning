@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;    // Allows using List<T>
 
 public class RTSSelectionManager : MonoBehaviour
 {
