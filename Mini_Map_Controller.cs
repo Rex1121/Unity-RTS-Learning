@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class MiniMapController : MonoBehaviour
 {
     public Camera miniMapCamera;           // Reference to the top-down mini-map camera
