@@ -1,6 +1,5 @@
-using UnityEngine;                         // Required for Unity components
-using System.Collections.Generic;          // Required for lists
-
+using UnityEngine;                         
+using System.Collections.Generic;          
 public class FogOfWar : MonoBehaviour
 {
     public int textureSize = 512;           // Resolution of the fog mask texture
