@@ -12,7 +12,7 @@ public class SelectionBoxUI : MonoBehaviour
 
     public void UpdateRectangle(Rect rect)
     {
-        if (!boxImage.enabled) boxImage.enabled = true; // Ensure it's visible
+        if (!boxImage.enabled) boxImage.enabled = true; // Ensure it visible
 
         boxImage.rectTransform.anchoredPosition =
             new Vector2(rect.x + rect.width / 2, rect.y + rect.height / 2); // Set center
